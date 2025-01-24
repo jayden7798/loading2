@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Input } from "@/components/ui/input";
-import { Calculator, Shield, Brain, BarChart3, Target, Zap, ArrowRight, Sparkles, Check, Users, ExternalLink, ClipboardEdit } from 'lucide-react';
+import { Calculator, Shield, Brain, BarChart3, Target, Zap, ArrowRight, Sparkles, Check, ExternalLink, ClipboardEdit } from 'lucide-react';
 import { Meteors } from "@/components/ui/meteors";
 import { supabase } from '@/lib/supabase';
 import { useToast } from "@/hooks/use-toast";
@@ -123,12 +123,6 @@ function App() {
                     <Sparkles className="w-4 h-4 text-blue-600" />
                     <span className="text-sm font-medium text-blue-600">Onboarding beta testers weekly</span>
                   </div>
-                  {waitlistCount !== null && waitlistCount > 0 && (
-                    <div className="flex items-center justify-center gap-2 text-gray-900 font-medium mb-3">
-                      <Users className="w-5 h-5 text-blue-600" />
-                      <span>Join {waitlistCount.toLocaleString()}+ traders already on board!</span>
-                    </div>
-                  )}
                   <p className="text-sm text-gray-600">Join the waitlist to take advantage of highly discounted prices for our early adopters!</p>
                 </div>
                 <form onSubmit={handleSubmit} className="space-y-4">
