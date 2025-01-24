@@ -97,10 +97,6 @@ function App() {
             <div className="max-w-md mx-auto mb-16">
               <div className="relative">
                 <div className="mb-6 text-center">
-                  <div className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-50 to-purple-50 rounded-full px-4 py-1 mb-3">
-                    <Sparkles className="w-4 h-4 text-blue-600" />
-                    <span className="text-sm font-medium text-blue-600">Onboarding beta testers weekly</span>
-                  </div>
                   <p className="text-sm text-gray-600">Join the waitlist to take advantage of highly discounted prices for our early adopters!</p>
                 </div>
                 <form onSubmit={handleSubmit} className="space-y-4">
