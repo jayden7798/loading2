@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Input } from "@/components/ui/input";
 import { Calculator, Shield, Brain, BarChart3, Target, Zap, ArrowRight, Sparkles, Check, ExternalLink, ClipboardEdit } from 'lucide-react';
@@ -10,26 +10,7 @@ import { Toaster } from "@/components/ui/toaster";
 function App() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [waitlistCount, setWaitlistCount] = useState<number | null>(null);
   const { toast } = useToast();
-
-  useEffect(() => {
-    async function fetchWaitlistCount() {
-      try {
-        const { count, error } = await supabase
-          .from('waitlist')
-          .select('*', { count: 'exact', head: true })
-          .eq('status', 'subscribed');
-
-        if (error) throw error;
-        setWaitlistCount(count);
-      } catch (error) {
-        console.error('Error fetching waitlist count:', error);
-      }
-    }
-
-    fetchWaitlistCount();
-  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,9 +37,6 @@ function App() {
         .insert([{ email }]);
 
       if (error) throw error;
-
-      // Update the count after successful registration
-      setWaitlistCount(prev => prev !== null ? prev + 1 : 1);
 
       toast({
         title: "Welcome to SmartRisk! 🎉",
