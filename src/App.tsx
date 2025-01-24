@@ -89,7 +89,7 @@ function App() {
               </h1>
               
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Professional position sizing calculator that helps you maximize profits while keeping your portfolio protected. Stay within prop firm limits and trade with confidence.
+                Professional position sizing calculator designed to prioritize capital preservation and build sustainable risk management habits. Stay within prop firm limits, protect your portfolio, and trade with confidence.
               </p>
             </div>
 
@@ -155,95 +155,131 @@ function App() {
               </a>
             </div>
 
-            {/* Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Advanced Position Calculator */}
-              <div className="group bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100/50 hover:border-blue-200/50 transition-all duration-300 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative">
-                  <div className="bg-gradient-to-br from-blue-100 to-blue-50 rounded-xl w-14 h-14 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Calculator className="w-7 h-7 text-blue-600" />
-                  </div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Advanced Position Calculator</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">Calculate exact position sizes using precise risk parameters. Our advanced calculator handles all major forex pairs plus gold and silver with real-time pip value calculations.</p>
-                  <ul className="space-y-4">
-                    <li className="flex items-center gap-3 text-gray-600">
-                      <Target className="w-5 h-5 text-blue-600" />
-                      <span>Support for all major forex pairs</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-gray-600">
-                      <BarChart3 className="w-5 h-5 text-blue-600" />
-                      <span>Gold (XAU/USD) trading</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-gray-600">
-                      <Zap className="w-5 h-5 text-blue-600" />
-                      <span>Silver (XAG/USD) trading</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-gray-600">
-                      <Zap className="w-5 h-5 text-blue-600" />
-                      <span>Dynamic position sizing</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-gray-600">
-                      <Zap className="w-5 h-5 text-blue-600" />
-                      <span>Saved calculations</span>
-                    </li>
-                  </ul>
-                </div>
+            {/* Features Section */}
+            <div className="relative">
+              {/* Features Header */}
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                  Powerful Features for{' '}
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                    Smart Trading
+                  </span>
+                </h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Everything you need to make informed trading decisions and manage risk effectively
+                </p>
               </div>
 
-              {/* Risk Management */}
-              <div className="group bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100/50 hover:border-purple-200/50 transition-all duration-300 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative">
-                  <div className="bg-gradient-to-br from-purple-100 to-purple-50 rounded-xl w-14 h-14 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Shield className="w-7 h-7 text-purple-600" />
+              {/* Features Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 via-purple-50/50 to-transparent rounded-3xl -mx-8 -my-12 blur-3xl opacity-50"></div>
+                
+                {/* NextMove Pro */}
+                <div className="group bg-white/95 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-gray-100/50 hover:border-indigo-200/50 transition-all duration-500 relative overflow-hidden transform hover:-translate-y-1">
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative">
+                    <div className="bg-gradient-to-br from-indigo-100 to-indigo-50 rounded-xl w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                      <Brain className="w-8 h-8 text-indigo-600" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-indigo-800">NextMove Pro</h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">Get data-driven insights for your next trade based on your current account performance and market conditions.</p>
+                    <ul className="space-y-4">
+                      <li className="flex items-center gap-3 text-gray-600 group/item">
+                        <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-indigo-50 group-hover/item:bg-indigo-100 transition-colors duration-300">
+                          <Target className="w-5 h-5 text-indigo-600" />
+                        </span>
+                        <span>Position size recommendations</span>
+                      </li>
+                      <li className="flex items-center gap-3 text-gray-600 group/item">
+                        <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-indigo-50 group-hover/item:bg-indigo-100 transition-colors duration-300">
+                          <Shield className="w-5 h-5 text-indigo-600" />
+                        </span>
+                        <span>Risk optimization</span>
+                      </li>
+                      <li className="flex items-center gap-3 text-gray-600 group/item">
+                        <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-indigo-50 group-hover/item:bg-indigo-100 transition-colors duration-300">
+                          <Zap className="w-5 h-5 text-indigo-600" />
+                        </span>
+                        <span>Drawdown management</span>
+                      </li>
+                    </ul>
                   </div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Risk Management</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">Monitor and manage your risk with alerts and customizable risk thresholds. Stay within prop firm drawdown limits.</p>
-                  <ul className="space-y-4">
-                    <li className="flex items-center gap-3 text-gray-600">
-                      <Target className="w-5 h-5 text-purple-600" />
-                      <span>Real-time drawdown monitoring</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-gray-600">
-                      <BarChart3 className="w-5 h-5 text-purple-600" />
-                      <span>Custom risk thresholds</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-gray-600">
-                      <Zap className="w-5 h-5 text-purple-600" />
-                      <span>Daily loss limits</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-gray-600">
-                      <Zap className="w-5 h-5 text-purple-600" />
-                      <span>Risk level warnings</span>
-                    </li>
-                  </ul>
                 </div>
-              </div>
 
-              {/* Advanced Analytics */}
-              <div className="group bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100/50 hover:border-green-200/50 transition-all duration-300 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative">
-                  <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-xl w-14 h-14 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Brain className="w-7 h-7 text-green-600" />
+                {/* Advanced Position Calculator */}
+                <div className="group bg-white/95 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-gray-100/50 hover:border-blue-200/50 transition-all duration-500 relative overflow-hidden transform hover:-translate-y-1">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative">
+                    <div className="bg-gradient-to-br from-blue-100 to-blue-50 rounded-xl w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                      <Calculator className="w-8 h-8 text-blue-600" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">Advanced Position Calculator</h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">Calculate exact position sizes using precise risk parameters. Our advanced calculator handles all major forex pairs plus gold and silver.</p>
+                    <ul className="space-y-4">
+                      <li className="flex items-center gap-3 text-gray-600 group/item">
+                        <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-blue-50 group-hover/item:bg-blue-100 transition-colors duration-300">
+                          <Target className="w-5 h-5 text-blue-600" />
+                        </span>
+                        <span>Support for all major forex pairs</span>
+                      </li>
+                      <li className="flex items-center gap-3 text-gray-600 group/item">
+                        <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-blue-50 group-hover/item:bg-blue-100 transition-colors duration-300">
+                          <BarChart3 className="w-5 h-5 text-blue-600" />
+                        </span>
+                        <span>Gold (XAU/USD) trading</span>
+                      </li>
+                      <li className="flex items-center gap-3 text-gray-600 group/item">
+                        <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-blue-50 group-hover/item:bg-blue-100 transition-colors duration-300">
+                          <Zap className="w-5 h-5 text-blue-600" />
+                        </span>
+                        <span>Silver (XAG/USD) trading</span>
+                      </li>
+                      <li className="flex items-center gap-3 text-gray-600 group/item">
+                        <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-blue-50 group-hover/item:bg-blue-100 transition-colors duration-300">
+                          <Zap className="w-5 h-5 text-blue-600" />
+                        </span>
+                        <span>Dynamic position sizing</span>
+                      </li>
+                    </ul>
                   </div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Advanced Analytics</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">Make data-driven decisions with advanced risk metrics including Value at Risk (VaR) and Monte Carlo simulations.</p>
-                  <ul className="space-y-4">
-                    <li className="flex items-center gap-3 text-gray-600">
-                      <Target className="w-5 h-5 text-green-600" />
-                      <span>Value at Risk (VaR) analysis</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-gray-600">
-                      <BarChart3 className="w-5 h-5 text-green-600" />
-                      <span>Monte Carlo simulations</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-gray-600">
-                      <Zap className="w-5 h-5 text-green-600" />
-                      <span>Risk of Ruin calculator</span>
-                    </li>
-                  </ul>
+                </div>
+
+                {/* Risk Management */}
+                <div className="group bg-white/95 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-gray-100/50 hover:border-purple-200/50 transition-all duration-500 relative overflow-hidden transform hover:-translate-y-1">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative">
+                    <div className="bg-gradient-to-br from-purple-100 to-purple-50 rounded-xl w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                      <Shield className="w-8 h-8 text-purple-600" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-800">Risk Management</h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">Monitor and manage your risk with alerts and customizable risk thresholds. Stay within prop firm drawdown limits.</p>
+                    <ul className="space-y-4">
+                      <li className="flex items-center gap-3 text-gray-600 group/item">
+                        <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-purple-50 group-hover/item:bg-purple-100 transition-colors duration-300">
+                          <Target className="w-5 h-5 text-purple-600" />
+                        </span>
+                        <span>Real-time drawdown monitoring</span>
+                      </li>
+                      <li className="flex items-center gap-3 text-gray-600 group/item">
+                        <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-purple-50 group-hover/item:bg-purple-100 transition-colors duration-300">
+                          <BarChart3 className="w-5 h-5 text-purple-600" />
+                        </span>
+                        <span>Custom risk thresholds</span>
+                      </li>
+                      <li className="flex items-center gap-3 text-gray-600 group/item">
+                        <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-purple-50 group-hover/item:bg-purple-100 transition-colors duration-300">
+                          <Zap className="w-5 h-5 text-purple-600" />
+                        </span>
+                        <span>Daily loss limits</span>
+                      </li>
+                      <li className="flex items-center gap-3 text-gray-600 group/item">
+                        <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-purple-50 group-hover/item:bg-purple-100 transition-colors duration-300">
+                          <Zap className="w-5 h-5 text-purple-600" />
+                        </span>
+                        <span>Risk level warnings</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
