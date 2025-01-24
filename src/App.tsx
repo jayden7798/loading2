@@ -145,6 +145,21 @@ function App() {
               </div>
             </div>
 
+            {/* Survey Link */}
+            <div className="text-center mb-16">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfWfEsE85l6i95pIFB3V1EbS9ZKCodlt81W4m_3QDf7pKEKVg/viewform?usp=header"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border border-blue-100/50 shadow-sm hover:shadow-md transition-all duration-300 group"
+              >
+                <ClipboardEdit className="w-5 h-5 text-blue-600 transition-transform duration-200 group-hover:scale-110" />
+                <span className="text-gray-900 font-medium">Help shape SmartRisk by taking our quick survey</span>
+                <ExternalLink className="w-4 h-4 text-blue-600 transition-transform duration-200 group-hover:translate-x-0.5" />
+              </a>
+              <p className="mt-2 text-sm text-gray-500">Your feedback helps us build a better product for you</p>
+            </div>
+
             {/* Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Advanced Position Calculator */}
@@ -236,21 +251,6 @@ function App() {
                   </ul>
                 </div>
               </div>
-            </div>
-
-            {/* Survey Link */}
-            <div className="mt-8 text-center">
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfWfEsE85l6i95pIFB3V1EbS9ZKCodlt81W4m_3QDf7pKEKVg/viewform?usp=header"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border border-blue-100/50 shadow-sm hover:shadow-md transition-all duration-300 group"
-              >
-                <ClipboardEdit className="w-5 h-5 text-blue-600 transition-transform duration-200 group-hover:scale-110" />
-                <span className="text-gray-900 font-medium">Help shape SmartRisk by taking our quick survey</span>
-                <ExternalLink className="w-4 h-4 text-blue-600 transition-transform duration-200 group-hover:translate-x-0.5" />
-              </a>
-              <p className="mt-2 text-sm text-gray-500">Your feedback helps us build a better product for you</p>
             </div>
           </div>
         </div>
