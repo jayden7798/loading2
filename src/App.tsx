@@ -157,7 +157,6 @@ function App() {
                 <span className="text-gray-900 font-medium">Help shape SmartRisk by taking our quick survey</span>
                 <ExternalLink className="w-4 h-4 text-blue-600 transition-transform duration-200 group-hover:translate-x-0.5" />
               </a>
-              <p className="mt-2 text-sm text-gray-500">Your feedback helps us build a better product for you</p>
             </div>
 
             {/* Features Grid */}
