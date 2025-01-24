@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Input } from "@/components/ui/input";
-import { Calculator, Shield, Brain, BarChart3, Target, Zap, ArrowRight, Sparkles, FormInput, Check, Users } from 'lucide-react';
+import { Calculator, Shield, Brain, BarChart3, Target, Zap, ArrowRight, Sparkles, Check, Users } from 'lucide-react';
 import { Meteors } from "@/components/ui/meteors";
 import { supabase } from '@/lib/supabase';
 import { useToast } from "@/hooks/use-toast";
