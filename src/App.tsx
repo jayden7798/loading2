@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Input } from "@/components/ui/input";
-import { Calculator, Shield, Brain, BarChart3, Target, Zap, ArrowRight, Sparkles, Check, Users } from 'lucide-react';
+import { Calculator, Shield, Brain, BarChart3, Target, Zap, ArrowRight, Sparkles, Check, Users, ExternalLink } from 'lucide-react';
 import { Meteors } from "@/components/ui/meteors";
 import { supabase } from '@/lib/supabase';
 import { useToast } from "@/hooks/use-toast";
@@ -169,6 +169,19 @@ function App() {
                     <Zap className="w-5 h-5 text-purple-600" />
                     <span>Early Access</span>
                   </div>
+                </div>
+
+                {/* Survey Link */}
+                <div className="mt-8 text-center">
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfWfEsE85l6i95pIFB3V1EbS9ZKCodlt81W4m_3QDf7pKEKVg/viewform?usp=header"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors duration-200 group"
+                  >
+                    <span className="border-b border-blue-600 group-hover:border-blue-700">Help shape SmartRisk by taking our quick survey</span>
+                    <ExternalLink className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+                  </a>
                 </div>
               </div>
             </div>
