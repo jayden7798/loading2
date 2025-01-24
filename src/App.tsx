@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Input } from "@/components/ui/input";
-import { Calculator, Shield, Brain, BarChart3, Target, Zap, ArrowRight, Sparkles, FormInput, Check } from 'lucide-react';
+import { Calculator, Shield, Brain, BarChart3, Target, Zap, ArrowRight, Sparkles, FormInput, Check, Users } from 'lucide-react';
 import { Meteors } from "@/components/ui/meteors";
 import { supabase } from '@/lib/supabase';
 import { useToast } from "@/hooks/use-toast";
@@ -10,14 +10,32 @@ import { Toaster } from "@/components/ui/toaster";
 function App() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [waitlistCount, setWaitlistCount] = useState<number | null>(null);
   const { toast } = useToast();
+
+  useEffect(() => {
+    async function fetchWaitlistCount() {
+      try {
+        const { count, error } = await supabase
+          .from('waitlist')
+          .select('*', { count: 'exact', head: true })
+          .eq('status', 'subscribed');
+
+        if (error) throw error;
+        setWaitlistCount(count);
+      } catch (error) {
+        console.error('Error fetching waitlist count:', error);
+      }
+    }
+
+    fetchWaitlistCount();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      // Check if email exists using maybeSingle() instead of single()
       const { data: existingEmails } = await supabase
         .from('waitlist')
         .select('email')
@@ -38,6 +56,9 @@ function App() {
         .insert([{ email }]);
 
       if (error) throw error;
+
+      // Update the count after successful registration
+      setWaitlistCount(prev => prev !== null ? prev + 1 : 1);
 
       toast({
         title: "Welcome to SmartRisk! 🎉",
@@ -102,6 +123,12 @@ function App() {
                     <Sparkles className="w-4 h-4 text-blue-600" />
                     <span className="text-sm font-medium text-blue-600">Onboarding beta testers weekly</span>
                   </div>
+                  {waitlistCount !== null && waitlistCount > 0 && (
+                    <div className="flex items-center justify-center gap-2 text-gray-900 font-medium mb-3">
+                      <Users className="w-5 h-5 text-blue-600" />
+                      <span>Join {waitlistCount.toLocaleString()}+ traders already on board!</span>
+                    </div>
+                  )}
                   <p className="text-sm text-gray-600">Join the waitlist to take advantage of highly discounted prices for our early adopters!</p>
                 </div>
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -143,31 +170,6 @@ function App() {
                     <span>Early Access</span>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Questionnaire Section */}
-            <div className="max-w-2xl mx-auto mb-24 text-center">
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100/50">
-                <div className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-50 to-purple-50 rounded-full px-4 py-2 mb-4">
-                  <FormInput className="w-4 h-4 text-blue-600" />
-                  <span className="text-sm font-medium text-blue-600">Help Shape SmartRisk</span>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  In the meantime, share your thoughts!
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  Take our quick survey to tell us about your current position sizing tools and what features you'd love to see in SmartRisk.
-                </p>
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSfWfEsE85l6i95pIFB3V1EbS9ZKCodlt81W4m_3QDf7pKEKVg/viewform?usp=header"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-50 to-purple-50 text-blue-600 font-medium rounded-xl hover:shadow-md transition-all duration-200 group"
-                >
-                  Take the Survey
-                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-                </a>
               </div>
             </div>
 
